@@ -15,6 +15,12 @@ const WebSocketServer = require('ws').Server;
 // attach websocket to the existing server
 const wss = new WebSocketServer({server: server});
 
+// when there's a connection, so some stuff based on the state of the connection
+// open, close, error states
+// broadcast is a custom function added to the websocket server to write to all connected clients
+// added directly to the server oject as a property instead of to the prototype
+// because there will only ever be one instance of this object, so no need to share
+// methods from the prototype
 wss.on('connection', function connection(ws) {
     const numClients = wss.clients.size;
     console.log('Clients connected: ', numClients);
