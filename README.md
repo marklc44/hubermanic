@@ -18,3 +18,6 @@ Doesn't do much right now, but has a websocket server and basic http server
         - When code is pushed to origin main
             - same steps
             - could add a deploy step at the end, if all goes well, push a button in github or something that will restart pm2
+
+# Issues
+ - git pull cron seems to be stopped
